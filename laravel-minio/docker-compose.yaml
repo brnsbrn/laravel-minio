@@ -18,15 +18,15 @@ services:
       DB_USERNAME: root
       DB_PASSWORD:
       MINIO_ENDPOINT: minio:9000
-      MINIO_KEY: jabran
-      MINIO_SECRET: jabran
+      MINIO_KEY: pingki
+      MINIO_SECRET: pingki
 
   db:
     image: mysql:5.7
     ports:
       - "3307:3306"
     environment:
-      MYSQL_DATABASE: images
+      MYSQL_DATABASE: laravelminio
       MYSQL_ROOT_PASSWORD: ''
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
 
@@ -37,8 +37,8 @@ services:
     volumes:
       - minio_data:/data
     environment:
-      MINIO_ROOT_USER: jabran
-      MINIO_ROOT_PASSWORD: jabran
+      MINIO_ROOT_USER: pingki
+      MINIO_ROOT_PASSWORD: pingki
 
 volumes:
   minio_data:
